@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameVault - Indie Game Showcase</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-gamepad"></i>
+                <span>GameVault</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#games" class="nav-link">Games</a>
+                <a href="#upload" class="nav-link">Upload Game</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Amazing Indie Games</h1>
+                <p class="hero-subtitle">The ultimate platform for independent game developers to showcase their creations</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('games')">
+                        <i class="fas fa-play"></i> Browse Games
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('upload')">
+                        <i class="fas fa-upload"></i> Upload Your Game
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-elements">
+                    <div class="floating-element"><i class="fas fa-gamepad"></i></div>
+                    <div class="floating-element"><i class="fas fa-trophy"></i></div>
+                    <div class="floating-element"><i class="fas fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filters -->
+    <section id="games" class="games-section">
+        <div class="container">
+            <h2 class="section-title">Featured Games</h2>
+            
+            <div class="search-filters">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search games..." />
+                </div>
+                <div class="filters">
+                    <select id="genreFilter">
+                        <option value="all">All Genres</option>
+                        <option value="action">Action</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="puzzle">Puzzle</option>
+                        <option value="rpg">RPG</option>
+                        <option value="strategy">Strategy</option>
+                        <option value="arcade">Arcade</option>
+                        <option value="simulation">Simulation</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select id="platformFilter">
+                        <option value="all">All Platforms</option>
+                        <option value="pc">PC</option>
+                        <option value="mac">Mac</option>
+                        <option value="linux">Linux</option>
+                        <option value="android">Android</option>
+                        <option value="web">Web</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Games Grid -->
+            <div id="gamesGrid" class="games-grid">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading awesome games...</p>
+                </div>
+            </div>
+
+            <div id="noGames" class="no-games" style="display: none;">
+                <i class="fas fa-gamepad"></i>
+                <h3>No games found</h3>
+                <p>Be the first to upload a game!</p>
+                <button class="btn btn-primary" onclick="scrollToSection('upload')">Upload Your Game</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section">
+        <div class="container">
+            <h2 class="section-title">Upload Your Game</h2>
+            <p class="section-subtitle">Share your indie masterpiece with the world</p>
+            
+            <div class="upload-container">
+                <form id="uploadForm" class="upload-form" enctype="multipart/form-data">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="title">Game Title *</label>
+                            <input type="text" id="title" name="title" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="developer">Developer *</label>
+                            <input type="text" id="developer" name="developer" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="genre">Genre</label>
+                            <select id="genre" name="genre">
+                                <option value="action">Action</option>
+                                <option value="adventure">Adventure</option>
+                                <option value="puzzle">Puzzle</option>
+                                <option value="rpg">RPG</option>
+                                <option value="strategy">Strategy</option>
+                                <option value="arcade">Arcade</option>
+                                <option value="simulation">Simulation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="platform">Platform</label>
+                            <select id="platform" name="platform">
+                                <option value="pc">PC</option>
+                                <option value="mac">Mac</option>
+                                <option value="linux">Linux</option>
+                                <option value="android">Android</option>
+                                <option value="web">Web</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="version">Version</label>
+                            <input type="text" id="version" name="version" placeholder="1.0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="description">Description *</label>
+                        <textarea id="description" name="description" rows="4" required placeholder="Tell us about your game..."></textarea>
+                    </div>
+                    
+                    <div class="file-uploads">
+                        <div class="file-upload">
+                            <label for="gameFile">Game File * (.zip, .rar, .7z, .exe, .dmg, .apk)</label>
+                            <div class="file-input-container">
+                                <input type="file" id="gameFile" name="gameFile" accept=".zip,.rar,.7z,.exe,.dmg,.apk" required>
+                                <div class="file-input-display">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Choose game file</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="file-upload">
+                            <label for="logo">Game Logo</label>
+                            <div class="file-input-container">
+                                <input type="file" id="logo" name="logo" accept="image/*">
+                                <div class="file-input-display">
+                                    <i class="fas fa-image"></i>
+                                    <span>Choose logo</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="file-upload">
+                            <label for="screenshot">Screenshots (up to 5)</label>
+                            <div class="file-input-container">
+                                <input type="file" id="screenshot" name="screenshot" accept="image/*" multiple>
+                                <div class="file-input-display">
+                                    <i class="fas fa-images"></i>
+                                    <span>Choose screenshots</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-upload"></i>
+                        Upload Game
+                    </button>
+                </form>
+                
+                <div id="uploadProgress" class="upload-progress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p>Uploading your game...</p>
+                </div>
+                
+                <div id="uploadSuccess" class="upload-success" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Game uploaded successfully!</h3>
+                    <p>Your game is now available in the showcase.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About GameVault</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>GameVault is a dedicated platform for indie game developers to showcase their creative works. We believe in supporting independent developers and providing them with a space to share their games with a passionate gaming community.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-upload"></i>
+                            <h4>Easy Upload</h4>
+                            <p>Simple and intuitive game upload process</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-search"></i>
+                            <h4>Discover Games</h4>
+                            <p>Advanced search and filtering options</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-download"></i>
+                            <h4>Free Downloads</h4>
+                            <p>All games are freely available to download</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-gamepad"></i>
+                        <span>GameVault</span>
+                    </div>
+                    <p>Supporting indie game developers worldwide</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#games">Games</a>
+                    <a href="#upload">Upload</a>
+                    <a href="#about">About</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <a href="#">Discord</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GameVault. Made with ❤️ for indie developers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Game Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="gameDetails"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
