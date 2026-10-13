@@ -30,7 +30,12 @@
           <a href="#faq">FAQ</a>
         </nav>
 
-        <a class="button button-primary" href="#catalog">Browse cheats</a>
+        <div class="nav-actions">
+          <button id="themeToggle" class="button button-secondary theme-button" type="button" aria-label="Toggle theme">
+            🌙 Dark
+          </button>
+          <a class="button button-primary" href="#catalog">Browse cheats</a>
+        </div>
       </div>
     </header>
 
@@ -170,6 +175,14 @@
         <p>Built for better browsing and cleaner game references.</p>
       </div>
     </footer>
+
+    <div id="detailsModal" class="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" type="button" aria-label="Close details">×</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
