@@ -14,6 +14,7 @@
   --surface-strong: rgba(9, 16, 26, 0.96);
   --input-bg: rgba(15, 22, 36, 0.7);
   --chip-bg: rgba(148, 163, 184, 0.08);
+  --highlight: rgba(125, 211, 252, 0.12);
 }
 
 body.light-theme {
@@ -32,6 +33,7 @@ body.light-theme {
   --surface-strong: rgba(240, 246, 255, 0.96);
   --input-bg: rgba(255, 255, 255, 0.8);
   --chip-bg: rgba(15, 23, 42, 0.04);
+  --highlight: rgba(14, 165, 233, 0.08);
 }
 
 * {
@@ -50,6 +52,14 @@ body {
     linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
   color: var(--text);
   transition: background 0.25s ease, color 0.25s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 0%, rgba(125, 211, 252, 0.08) 50%, transparent 100%);
 }
 
 a {
@@ -311,6 +321,47 @@ input {
   padding: 0.45rem 0.7rem;
   border-radius: 0.5rem;
   color: var(--accent);
+}
+
+.highlights {
+  padding: 1.25rem 0 0;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.mini-feature {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: rgba(15, 22, 36, 0.72);
+  border: 1px solid var(--card-border);
+  border-radius: 1.15rem;
+  padding: 1.2rem;
+}
+
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.9rem;
+  background: var(--highlight);
+  font-size: 1.3rem;
+}
+
+.mini-feature h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.mini-feature p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .catalog,
@@ -700,6 +751,7 @@ input {
     justify-content: center;
   }
 
+  .highlight-grid,
   .hero-inner,
   .guide-grid,
   .section-heading {

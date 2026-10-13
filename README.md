@@ -1,6 +1,6 @@
 # Gog-cheats-website
 
-A lightweight, modern website for browsing game cheat guides and helpful trivia-style tips.
+A lightweight, modern website for browsing game cheat guides and helpful strategy-style tips.
 
 ## Features
 - Responsive landing page
@@ -8,6 +8,7 @@ A lightweight, modern website for browsing game cheat guides and helpful trivia-
 - Category filters
 - Theme toggle for light/dark mode
 - Interactive tip modal for each game
+- Premium gaming-dashboard styling
 
 ## Run locally
 Open `index.html` in a browser, or serve the folder with a simple static server.
