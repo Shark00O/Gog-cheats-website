@@ -1,17 +1,16 @@
 # Gog-cheats-website
 
-A lightweight, modern website for browsing game cheat guides and helpful strategy-style tips.
+A premium static gaming portal for browsing safe game tips, strategy guides, and curated cheat-style references.
 
 ## Features
-- Responsive landing page
-- Searchable game catalog
-- Category filters
-- Theme toggle for light/dark mode
-- Interactive tip modal for each game
-- Premium gaming-dashboard styling
+- Responsive storefront-inspired layout
+- Searchable and filterable catalog
+- Dark/light theme toggle
+- Modal-based detail views for each game guide
+- Curated collection sections and premium UI styling
 
 ## Run locally
-Open `index.html` in a browser, or serve the folder with a simple static server.
+Open `index.html` directly in a browser, or serve the project with a local static server.
 
 Example:
 
@@ -19,4 +18,4 @@ Example:
 python -m http.server 8000
 ```
 
-Then visit `http://localhost:8000` in your browser.
+Then open `http://localhost:8000` in your browser.
