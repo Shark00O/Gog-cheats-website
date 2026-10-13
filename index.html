@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A modern cheats and game helper hub for players who want quick, safe, and organized game tips."
+    />
+    <title>GOG Cheats Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand" aria-label="GOG Cheats Hub home">
+          <span class="brand-mark">G</span>
+          <span>GOG Cheats Hub</span>
+        </div>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#catalog">Catalog</a>
+          <a href="#guide">Guide</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <a class="button button-primary" href="#catalog">Browse cheats</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Game knowledge, organized</p>
+            <h1>Find safe, useful game tricks and tips without the clutter.</h1>
+            <p class="hero-text">
+              Explore curated cheat guides, easy-to-follow strategies, and quick reference notes
+              for a smoother gaming experience.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#catalog">Explore library</a>
+              <a class="button button-secondary" href="#guide">How it works</a>
+            </div>
+            <ul class="hero-stats" aria-label="Site statistics">
+              <li><strong>20+</strong><span>Game pick-ups</span></li>
+              <li><strong>4</strong><span>Categories</span></li>
+              <li><strong>100%</strong><span>Lightweight</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-panel" aria-label="Featured cheat card">
+            <div class="panel-header">
+              <span class="status-dot"></span>
+              <span>Featured Guide</span>
+            </div>
+            <h2>Cyberpunk 2077</h2>
+            <p class="panel-badge">Mission Boost</p>
+            <div class="panel-points">
+              <div>
+                <span>Quick XP</span>
+                <strong>Double rewards</strong>
+              </div>
+              <div>
+                <span>Safety</span>
+                <strong>Verified steps</strong>
+              </div>
+            </div>
+            <div class="mini-code">
+              <span>Use early game loops</span>
+              <code>XP + gear</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog" id="catalog">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Catalog</p>
+              <h2>Browse the library</h2>
+            </div>
+            <label class="search-box" aria-label="Search cheats">
+              <span>Search</span>
+              <input id="searchInput" type="search" placeholder="Find a game or trick..." />
+            </label>
+          </div>
+
+          <div class="filters" id="filterBar" aria-label="Filter cheats by category">
+            <button class="filter active" data-filter="all" type="button">All</button>
+            <button class="filter" data-filter="rpg" type="button">RPG</button>
+            <button class="filter" data-filter="fps" type="button">FPS</button>
+            <button class="filter" data-filter="action" type="button">Action</button>
+            <button class="filter" data-filter="open-world" type="button">Open World</button>
+          </div>
+
+          <div id="cardGrid" class="card-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="guide" id="guide">
+        <div class="container guide-grid">
+          <div>
+            <p class="eyebrow">Smart usage</p>
+            <h2>Use game knowledge responsibly.</h2>
+            <p>
+              This resource is designed to help players discover useful tips, shortcuts, and
+              progression strategies without compromising the core experience of the game.
+            </p>
+          </div>
+
+          <div class="guide-list">
+            <article>
+              <span>01</span>
+              <div>
+                <h3>Check the category</h3>
+                <p>Filter guides by gameplay style and mode so you find the right setup fast.</p>
+              </div>
+            </article>
+            <article>
+              <span>02</span>
+              <div>
+                <h3>Read before using</h3>
+                <p>Each helper card includes the quick idea, category, and practical context.</p>
+              </div>
+            </article>
+            <article>
+              <span>03</span>
+              <div>
+                <h3>Keep it fair</h3>
+                <p>Use these tips to learn or optimize your play—not to ruin the experience for others.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" id="faq">
+        <div class="container faq-box">
+          <p class="eyebrow">FAQ</p>
+          <h2>Common questions</h2>
+          <div class="faq-list">
+            <details open>
+              <summary>Is this a cheat engine or a mod loader?</summary>
+              <p>No. This site is a lightweight reference hub focused on game tips and helpful strategies.</p>
+            </details>
+            <details>
+              <summary>Can I use this on GOG games?</summary>
+              <p>Yes, the site is meant to be a general gaming reference and works well for GOG titles and similar PC games.</p>
+            </details>
+            <details>
+              <summary>How do I customize the page?</summary>
+              <p>You can edit the content in the JavaScript data list to add your own games, tips, or categories.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2025 GOG Cheats Hub</p>
+        <p>Built for better browsing and cleaner game references.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
